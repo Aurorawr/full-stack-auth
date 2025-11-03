@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { sequelize } from "./db";
 import clientsRouter from "./routes/client";
+import usersRouter from "./routes/user";
 
 const app = express();
 const PORT = 3000;
@@ -26,6 +27,7 @@ app.use(express.json());
 
 // Ruta de prueba
 app.use("/clients", clientsRouter);
+app.use("/users", usersRouter);
 
 // Iniciar servidor
 app.listen(PORT, () => {
